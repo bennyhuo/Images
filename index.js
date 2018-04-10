@@ -15,7 +15,7 @@ if (process.argv.length > 3) {
     maxWidth = parseInt(process.argv[3]);
 }
 
-let override = process.argv[4] === 'true';
+let override = process.argv[4] !== 'false';
 
 String.prototype.rsplit = function (delimiter, limit) {
     delimiter = this.split(delimiter || /s+/);
@@ -34,7 +34,7 @@ if (fs.statSync(path).isDirectory()) {
 
 
 function processImage(item) {
-    if(item.endsWith("jpg") || item.endsWith("png")){
+    if(item.toLowerCase().endsWith("jpg") || item.toLowerCase().endsWith("png")){
 
         const dimensions = imageSize(item);
         console.log("original size: " + dimensions.width + ", " + dimensions.height);
