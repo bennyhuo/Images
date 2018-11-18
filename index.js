@@ -10,7 +10,7 @@ let path = ".";
 if (process.argv.length > 2) {
     path = process.argv[2];
 }
-let maxWidth = 500;
+let maxWidth = 1280;
 if (process.argv.length > 3) {
     maxWidth = parseInt(process.argv[3]);
 }
